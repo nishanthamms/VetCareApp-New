@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp"  routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Add New Farm</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/farmhouse"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input type="text" placeholder="Farm Name" [(ngModel)]="farm.farmName" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Farm Reg. No" [(ngModel)]="farm.farmRegNo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Owner Name" [(ngModel)]="farm.ownerName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Veterinarian Division" [(ngModel)]="farm.veterinarianDivision"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="G.S Division" [(ngModel)]="farm.GSDivision" value="{{userProfile?.gsdevision}}" disabled="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Address" [(ngModel)]="farm.address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Contact No." [(ngModel)]="farm.contactNo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Cattle count" [(ngModel)]="farm.cattleCount"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Dairy cattle count" [(ngModel)]="farm.dairyCattleCount"></ion-input>
+      </ion-item>
+    </div>
+    <ion-button class="save" expand="block" shape="round" (click)="addFarm()">SAVE</ion-button>
+  </div>
+</ion-content>

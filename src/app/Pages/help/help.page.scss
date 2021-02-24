@@ -1,0 +1,31 @@
+.back{
+    margin-left: 30px;
+    font-size: 25px;
+}
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}
+
+.section{
+    --ion-item-background: #8DC6C6;
+    --ion-item-color: #000000;
+    margin-right: 8px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.section-active{
+    --ion-item-background: #55AAAA;
+    --ion-item-color: #000000;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+    //text-align: left;
+}
+
+.child-item{
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+}

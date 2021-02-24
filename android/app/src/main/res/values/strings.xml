@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">VetCare App</string>
+    <string name="title_activity_main">VetCare App</string>
+    <string name="package_name">com.newapp.test</string>
+    <string name="custom_url_scheme">com.newapp.test</string>
+</resources>

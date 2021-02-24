@@ -1,0 +1,53 @@
+.back{
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}
+.help{
+    //padding-bottom: 10px;
+    padding-right: 8px;
+}
+.help-icon{
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.content{
+    //position:fixed;
+  
+    margin-left:5px;
+    margin-right:5px;
+    margin-top: 3px;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#farmers{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.update{
+    --background: #007474;
+    color:whitesmoke;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.tool-two{
+    padding-right: 30px;
+}
+
+.add{
+    font-size: 35px;
+}
+
+ion-card{
+    --background: #ffffe0;
+    color: black;
+}

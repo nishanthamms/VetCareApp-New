@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp"  routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Update Breeding Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" (click)="goback()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-datetime #myPicker type="date" placeholder="Date of heat sign observed"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="breeding.dateOfHeatObserved" (ionChange)="updateMyDate(myPicker.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker1 type="date" placeholder="Date of first AI"   max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="breeding.dateOfFirstAI" (ionChange)="updateMyDate(myPicker1.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker2 type="date" placeholder="Date of second AI"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="breeding.dateOfSecondAI" (ionChange)="updateMyDate(myPicker2.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Seman ID" [(ngModel)]="breeding.semanId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker3 type="date" placeholder="Date of PD"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="breeding.dateOfPD" (ionChange)="updateMyDate(myPicker3.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker4 type="date" placeholder="Date of last calving"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="breeding.dateOfLastCalving" (ionChange)="updateMyDate(myPicker4.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Number of calving" [(ngModel)]="breeding.noOfCalving"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="AI receipt no." [(ngModel)]="breeding.AIReceiptNo"></ion-input>
+      </ion-item>
+    </div>
+    <ion-button class="update" expand="block" shape="round" (click)="updateBreeding()">UPDATE</ion-button>
+  </div>
+</ion-content>

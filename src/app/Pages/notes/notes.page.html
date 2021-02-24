@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Notes</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/profile"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <!--div class="title-block">
+    <div class="heading">My Notes</div>
+  </div-->
+  <ion-searchbar  [(ngModel)]="term" animated="true"></ion-searchbar>
+  <ion-list>
+    <ion-list-header>
+      <!--ion-label>Notes</ion-label-->
+    </ion-list-header>
+    <div *ngFor="let note of (notes | async | filter:term) ">
+      <ion-item  *ngIf="uid== note.userid">
+      <ion-thumbnail class="check" slot="start">      
+      </ion-thumbnail>
+     
+      <ion-label>
+        <h2>{{note.title}}</h2>
+        <p>{{note.content}}</p>
+      </ion-label>
+      <ion-button  color="success" fill="outline" slot="end"  (click)="viewNote(note.id)">View</ion-button>
+    </ion-item>
+   
+  </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/addnote">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

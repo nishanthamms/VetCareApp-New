@@ -1,0 +1,44 @@
+.back{
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}
+.help{
+    //padding-bottom: 10px;
+    padding-right: 8px;
+}
+.help-icon{
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+/*.content{
+    //margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+ion-input{
+    border-radius: 5px;
+    font-size: small;
+    padding-left: 7px !important;
+}*/
+
+.save{
+    --background: #007474;
+    color: black;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.error-message{
+    margin-left: 20px;
+    color: red;
+}

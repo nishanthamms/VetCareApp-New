@@ -1,0 +1,8 @@
+{
+  "name": "todo",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

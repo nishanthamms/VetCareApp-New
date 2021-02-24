@@ -1,0 +1,196 @@
+<ion-header [hidden]=isInsVetHidden>
+  <ion-toolbar class="tool-one" >
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings" class="setting-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <!--ion-toolbar class="tool-two">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block"  fill="outline" routerLink="/tabs/farmfinder">Farm Finder<ion-icon name="location-sharp" slot="start" class="location"></ion-icon></ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" fill="outline" routerLink="/tabs/qrscan">QR Scanner<ion-icon name="qr-code-outline" slot="start" class="qrscan"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+  
+  </ion-toolbar-->
+</ion-header>
+
+<ion-content [hidden]=isInsVetHidden>
+  <!-- Default Searchbar -->
+  <!--ion-searchbar></ion-searchbar-->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Summary</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <!--ion-col size="3.85" class="col-one" routerLink="/tabs/sickcattle">
+            <ion-icon name="medkit-outline"></ion-icon>
+            <h1></h1>
+            <hr>
+            <h2>Sick</h2>
+          </ion-col>
+          <ion-col size="3.85" class="col-two" routerLink="/tabs/vaccinecattle">
+            <img src="assets/images/injection.png" class="img-one">
+            <h1></h1>
+            <hr>
+            <h2>Vaccine</h2>
+          </ion-col>
+          <ion-col size="3.85" class="col-three" routerLink="/tabs/pregnantcattle">
+            <img src="assets/images/pregnant.png" class="img-one"> 
+            <h1></h1>
+            <hr>
+            <h2>Pregnant</h2>
+          </ion-col-->
+          <ion-col size="5.85" class="col-four">
+            <img src="assets/images/barn.png" class="img-two">
+            <h1>{{farmCount}}</h1>
+            <hr>
+            <h2>Total Farms</h2>
+          </ion-col>
+          <ion-col size="5.85" class="col-five">
+            <img src="assets/images/cow.png" class="img-two">
+            <h1>{{cattlecount}}</h1>
+            <hr>
+            <h2>Total Cattles</h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>Actions</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content >
+      <ion-grid>
+        <ion-row >
+          <!--ion-col size="5.85" class="col-four" routerLink="/tabs/farmhouse">
+            <img src="assets/images/barn.png" class="img-two">
+            <h1>{{farmCount}}</h1>
+            <hr>
+            <h2>Farms</h2>
+          </ion-col>
+          <ion-col size="5.85" class="col-five" routerLink="/tabs/cattlehouse">
+            <img src="assets/images/cow.png" class="img-two">
+            <h1>{{cattlecount}}</h1>
+            <hr>
+            <h2>Cattle</h2>
+          </ion-col-->
+           <ion-col size="3.85" class="col-four" routerLink="/tabs/farmhouse">
+            <img src="assets/images/barn.png" class="img-two">
+            <h1></h1>
+            <hr>
+            <h2>Farms</h2>
+          </ion-col>
+          <ion-col size="3.85" class="col-two" routerLink="/tabs/qrscan">
+            <img src="assets/images/images/qrscan.png" class="img-one">
+            <h1></h1>
+            <hr>
+            <h2>QR Scanner</h2>
+          </ion-col>
+          <ion-col size="3.85" class="col-three" routerLink="/tabs/farmfinder">
+            <img src="assets/images/images/map.png" class="img-one"> 
+            <h1></h1>
+            <hr>
+            <h2>Farm Finder</h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content> 
+  </ion-card>
+
+  <!--ion-grid id="farmers">
+    <ion-row class="content">
+      <ion-col size="6" routerLink="/tabs/farm-info">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="6">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="6">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="6">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="6">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="6">
+        <div>S.M.Priyantha</div>
+      </ion-col>
+      <ion-col size="4">
+        <div>81246977070</div>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon name="trash-outline" color="danger" (click)="presentAlertConfirm()"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid--> 
+  
+
+</ion-content>

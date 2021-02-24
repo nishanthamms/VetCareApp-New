@@ -1,0 +1,59 @@
+<form [formGroup]="authForm" >
+<br>
+    <img src="assets/images/login.png" class="center"  *ngIf="!isSignupPage && !isPasswordResetPage">
+    <ion-item *ngIf="!isLoginPage && !isPasswordResetPage">
+      <ion-input formControlName="fullName"  type="text"   placeholder="Full Name"></ion-input>
+    </ion-item>
+    <div  *ngIf="!isLoginPage && !isPasswordResetPage">
+      <div *ngFor="let error of errorMessages.fullName">
+        <ng-container *ngIf="fullName.hasError(error.type) && (fullName.dirty || fullName.touched)">
+          <small class="error-message">{{ error.message }}</small>
+        </ng-container>
+      </div>
+    </div>
+    
+    <ion-item *ngIf="!isLoginPage && !isPasswordResetPage">
+      <ion-label position="stacked"></ion-label>
+      <ion-select   formControlName="designation"   placeholder="Designation">
+        <ion-select-option value="Veterinarian">Veterinarian</ion-select-option>
+        <ion-select-option value="Instructor">Instructor</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="!isLoginPage && !isPasswordResetPage">
+      <div *ngFor="let error of errorMessages.designation">
+        <ng-container *ngIf="designation.hasError(error.type) && (designation.dirty || designation.touched)">
+          <small class="error-message">{{ error.message }}</small>
+        </ng-container>
+      </div>
+    </div>
+    
+
+    <ion-item>
+    <ion-icon name="person-sharp" *ngIf="!isSignupPage && !isPasswordResetPage"></ion-icon>
+      <ion-input formControlName="email"  type="text"  placeholder="Email"></ion-input>
+    </ion-item>
+    <div *ngFor="let error of errorMessages.email">
+      <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+        <small class="error-message">{{ error.message }}</small>
+      </ng-container>
+    </div>
+    <br>
+    <ion-item *ngIf="!isPasswordResetPage">
+      <ion-icon name="key-sharp" *ngIf="!isSignupPage && !isPasswordResetPage"></ion-icon>
+      
+      <ion-input formControlName="password"  [type]="showNewPassword ? 'text': 'password'" placeholder="Password"></ion-input>
+      <ion-icon [name]="passwordToggleIcon"  item-end (click)="togglePassword()"></ion-icon>
+    </ion-item>
+    <div *ngIf="!isPasswordResetPage">
+      <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+          <small class="error-message">{{ error.message }}</small>
+        </ng-container>
+      </div>
+    </div>
+    
+
+  <ion-button  class="signup" (click)="submitCredentials(authForm)" expand="block" [disabled]="!authForm.valid">
+    {{ actionButtonText }}
+  </ion-button>
+</form>

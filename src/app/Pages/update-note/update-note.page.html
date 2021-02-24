@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>{{note.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" (click)="goback()"></ion-icon>
+    </ion-buttons>
+    <!--ion-buttons class="delete" slot="end">
+      <ion-icon name="trash-outline" color="danger" (click)="deleteNote(note.createDate)"></ion-icon>
+    </ion-buttons-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="content">
+    <ion-item>
+      <ion-input placeholder="Enter Title" [(ngModel)]="note.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea rows="6" [(ngModel)]="note.content" placeholder="Enter more information here..."></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button class="btnUpdate" expand="full" (click)="updateNote()">Update</ion-button>
+</ion-content>

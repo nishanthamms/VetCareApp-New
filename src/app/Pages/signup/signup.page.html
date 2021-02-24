@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline" (click)="navigateToHome()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--div class="content">
+    <div class="ion-padding">
+      <form [formGroup]="registrationForm" (formSubmitted)='signupUser($event)'>
+        <ion-list>
+          <ion-item>
+            <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.firstName">
+            <ng-container *ngIf="firstName.hasError(error.type) && (firstName.dirty || firstName.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.lastName">
+            <ng-container *ngIf="lastName.hasError(error.type) && (lastName.dirty || lastName.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="Email   This will be your Username"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-input formControlName="phone" type="tel" placeholder="Phone No."></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.phone">
+            <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-select class="select-job" formControlName="designation" placeholder="Designation">
+              <ion-select-option value="Veterinarian">Veterinarian</ion-select-option>
+              <ion-select-option value="Livestock Development Instructor">Livestock Development Instructor</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.designation">
+            <ng-container *ngIf="designation.hasError(error.type) && (designation.dirty || designation.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-input formControlName="password" [type]="showPassword ? 'text': 'password'" placeholder="Password"></ion-input>
+            <ion-icon [name]="passwordToggleIcon"  item-end (click)="togglePassword()"></ion-icon>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-input formControlName="confirmPassword" [type]="showConfirmPassword ? 'text': 'password'" placeholder="Confirm Password"></ion-input>
+            <ion-icon [name]="confirmpasswordToggleIcon"  item-end (click)="toggleConfirmPassword()"></ion-icon>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.confirmPassword">
+            <ng-container *ngIf="confirmPassword.hasError(error.type) && (confirmPassword.dirty || confirmPassword.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-button class="signup" type="submit" expand="block" shape="round" (click)="navigateToLogin()" [disabled]="!registrationForm.valid">Sing Up</ion-button>
+          <ion-button class="acc" fill="clear" (click)="navigateToLogin()">Already have an account?<p>Login</p></ion-button>
+        </ion-list>
+      </form>
+    </div>
+  </div-->
+  <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Create Account'" [isSignupPage]="true"></app-auth-form>
+
+  <ion-button expand="block" fill="clear" routerLink="/login">
+    I already have an account
+  </ion-button>
+
+
+</ion-content>

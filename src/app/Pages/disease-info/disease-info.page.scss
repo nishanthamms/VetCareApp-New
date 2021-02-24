@@ -1,0 +1,36 @@
+/*.toolbar{
+    /*ion-title{
+        margin-left: 5px;
+    }
+    padding-left: 30px;
+    padding-right: 30px;
+}*/
+
+.back{
+    margin-left: 30px;
+    font-size: 25px;
+}
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}.help{
+    //padding-bottom: 10px;
+    padding-right: 8px;
+}
+.help-icon{
+    font-size: 30px;
+    color: whitesmoke;
+}
+.update{
+    --background: #007474;
+    color: whitesmoke;
+}
+
+.my-custom-class {
+    --background: #e5e5e5;
+  }
+
+ion-card{
+    --background: #ffffe0;
+    color: black;
+}

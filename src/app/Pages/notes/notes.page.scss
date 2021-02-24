@@ -1,0 +1,52 @@
+.back{
+    margin-left: 30px;
+    font-size: 25px;
+}
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}
+.help{
+  //padding-bottom: 10px;
+  padding-right: 8px;
+}
+.help-icon{
+  font-size: 30px;
+  color: whitesmoke;
+}
+.add{
+    font-size: 60px;
+    margin-top: 445px;
+    margin-left: 305px;
+}
+
+ion-item {
+    --ion-background-color: #fff;
+    width: 95%;
+    margin: 15px auto;
+    font-weight: bold;
+    border-radius: 20px;
+    --border-radius: 20px;
+  }
+  .title-block{
+    position: relative;
+    margin: 0;
+    padding: 0;
+   // background-image: url("src/assets/images/bg.jpg");
+  //  height: 160px;
+  }
+  
+  .title-block .heading{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial Black"
+  }
+  .check{
+    background-image: url("src/assets/images/note.png");
+    background-size: 100% 100%;
+  }

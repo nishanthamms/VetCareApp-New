@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp"  routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Add Vaccination Information</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" (click)="goback()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-datetime #myPicker1 type="date" placeholder="Date" max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="vaccine.date" (ionChange)="updateMyDate(myPicker1.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Name of vaccine" [(ngModel)]="vaccine.nameOfVaccine"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Purpose of vaccine" [(ngModel)]="vaccine.purposeOfVaccine"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker2 type="date" placeholder="Next vaccination date"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="vaccine.nextVaccineDate" (ionChange)="updateMyDate(myPicker2.value)"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Reason of vaccination" [(ngModel)]="vaccine.reasonOfNextVaccine"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Remarks" [(ngModel)]="vaccine.remarks"></ion-input>
+      </ion-item>
+    </div>
+    <ion-button class="save" expand="block" shape="round" (click)="addVaccine()">SAVE</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <!--ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp"  routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons-->
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons> 
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Settings</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/farm"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <!--div>
+    <ion-button class="my-button" size="medium"  fill="clear" routerLink="/tabs/farmfinder">Farm Finder<ion-icon name="location-sharp" slot="start" class="location"></ion-icon></ion-button>
+  </div-->
+  <!--div>
+    <ion-button class="my-button" size="medium" fill="clear" routerLink="/tabs/about">About<ion-icon name="information-circle-sharp" slot="start" class="about"></ion-icon></ion-button>  
+  </div-->
+  <!--div>
+    <ion-button class="my-button" size="medium" fill="clear" routerLink="/tabs/help">Help<ion-icon name="help-sharp" slot="start" class="help"></ion-icon></ion-button>  
+  </div-->
+
+  <div>
+    <ion-item class="dark-mode" (click)="toggletheme()">
+      <ion-icon name="contrast" slot="start"></ion-icon>Theme Settings<ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+    </ion-item>
+    
+    <ion-list class="theme" *ngIf="showtheme">
+      <ion-item (click)="themeService.themeMode()">
+        <!--ion-icon name="contrast" slot="start"></ion-icon-->
+        <!--ion-icon name='color-fill' slot="start"></ion-icon-->
+        <ion-label>Dark Mode</ion-label>
+        <ion-icon name="sunny" class="flex-right" ></ion-icon>
+        <ion-toggle  [(ngModel)]="darkMode"></ion-toggle>
+        <ion-icon name="moon" class="flex-right"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!--ion-toolbar>
+    <ion-icon name="location-sharp" slot="start" class="location"></ion-icon><ion-button size="medium" color="dark" fill="clear" routerLink="/tabs/farmfinder">Farm Finder</ion-button>  
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-icon name="information-circle-sharp" slot="start" class="about"></ion-icon><ion-button size="medium" color="dark" fill="clear" routerLink="/tabs/about">About</ion-button>  
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item (click)="toggletheme()">
+      <ion-icon name="contrast" slot="start"></ion-icon>Theme Settings<ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-list class="theme" *ngIf="showtheme">
+      <ion-item (click)="toggleDarkMode()">
+        <!--ion-icon name="contrast" slot="start"></ion-icon>
+        <!--ion-icon name='color-fill' slot="start"></ion-icon>
+        <ion-label>Dark Mode</ion-label>
+        <ion-icon name="sunny" class="flex-right" ></ion-icon>
+        <ion-toggle  [(ngModel)]="themeService.tgldrk"></ion-toggle>
+        <ion-icon name="moon" class="flex-right"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar-->
+
+
+</ion-content>

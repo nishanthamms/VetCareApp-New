@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/home"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--div class="content">
+    <div class="ion-padding">
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="person-sharp"></ion-icon>
+            <ion-input formControlName="email" type="text" placeholder="Username"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-icon name="key-sharp"></ion-icon>
+            <ion-input formControlName="password" [type]="showPassword ? 'text': 'password'" placeholder="Password"></ion-input>
+            <ion-icon [name]="passwordToggleIcon"  item-end (click)="togglePassword()"></ion-icon>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{ error.message }}</small>
+            </ng-container>
+          </div>
+
+          <ion-button class="signin" type="submit" expand="block" shape="round" (click)="navigateToFarm()" [disabled]="!loginForm.valid">Sign In</ion-button>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="8">
+                <ion-item class="check">
+                  <ion-label>Remember me</ion-label>
+                  <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+                  <ion-checkbox checked></ion-checkbox>
+                  <p>Remember me</p>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                  <ion-button fill="clear">Forget Password?</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6"></ion-col>
+              <ion-col size="6">
+                <ion-button class="forgetpass" fill="clear">Forget Password?</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </form>
+    </div>
+  </div-->
+  <br>
+  <br>
+  <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Login'"[isLoginPage]="true"></app-auth-form>
+
+  <!--ion-button expand="block" fill="clear" routerLink="/signup">
+    Create a new account
+  </ion-button-->
+
+  <ion-button expand="block" fill="clear" routerLink="/reset-password">
+    I forgot my password
+  </ion-button>
+
+</ion-content>

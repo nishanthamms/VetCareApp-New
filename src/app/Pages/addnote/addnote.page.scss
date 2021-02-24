@@ -1,0 +1,49 @@
+.back{
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.save{
+    --background: #007474;
+    color: whitesmoke;
+    border-radius: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: none;
+}
+.btnAdd{
+    --background: #007474;
+    color: whitesmoke;
+    border-radius: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.content{
+    margin-left:10px;
+    margin-right:10px;
+}
+.setting{
+    padding-right: 30px;
+    font-size: 25px;
+}
+.help{
+  //padding-bottom: 10px;
+  padding-right: 8px;
+}
+.help-icon{
+  font-size: 30px;
+  color: whitesmoke;
+}
+/*ion-textarea {
+    --background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+}*/

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Chatroom</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/farm"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="chat" *ngFor="let chat of chatRef | async">
+   <div class="me" *ngIf="uid == chat.UserID">
+     <small></small><br>
+     {{chat.message}}<br>
+     <small> {{chat.time | date: 'short'}}</small><br>
+     <small> {{chat.id}}</small><br>
+     
+     <!--ion-button color="danger"  (click)="deleteProduct(chat)">delete</ion-button-->
+   </div>
+   
+   <div class="you" *ngIf="uid != chat.UserID">
+     <span class="name">
+      {{chat.Name}}
+     </span><br>
+     {{chat.message}}<br>
+     <small> {{chat.time | date: 'short'}}</small><br>
+     <small> {{chat.id}}</small><br>
+     
+   </div>
+ 
+  </div>
+ </ion-content>
+
+ <ion-footer>
+   <ion-item>
+     <ion-input placeholder="Type..." [(ngModel)]="text"></ion-input>
+     <ion-button (click)="send()" fill="clear" icon-only slot="end">
+       <ion-icon name="send"></ion-icon></ion-button>
+   </ion-item>
+ </ion-footer>

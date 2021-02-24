@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp"  routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Add New Cattle Information</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" (click)="goback()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input type="text" placeholder="Cattle Breed" [(ngModel)]="cattle.cattleBreed"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Cattle ID" [(ngModel)]="cattle.cattleTagId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker1 type="date" placeholder="Cattle Date of Birth"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" (ionChange)="updateMyDate(myPicker1.value)" [(ngModel)]="cattle.cattleDOB"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Special feature" [(ngModel)]="cattle.specialFeature"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Sex" [(ngModel)]="cattle.sex"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="No of Lactation" min="0" [(ngModel)]="cattle.noLactation"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Birth weight" min="0" [(ngModel)]="cattle.birthWeg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Breeding weight" min="0" [(ngModel)]="cattle.breedingWeg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Cattle weaning weight" min="0" [(ngModel)]="cattle.cattleWeaningWeg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Average Pre weaning growth rate" min="0" [(ngModel)]="cattle.avgPreWeg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Average Post weaning growth rate" min="0" [(ngModel)]="cattle.avgPostWeg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime #myPicker type="date" placeholder="Last calving date" max="2050-12-31" dispalyFormat="DD-MM-YYYY" (ionChange)="updateMyDate(myPicker.value)" [(ngModel)]="cattle.lastCalvingDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <!--ion-row>
+            <ion-col>
+              <ion-button id="uploadBtn" class="upload" expand="block"  type="file" fill="outline" (change)="uploadFile($event.target.files)">Upload Cattle Image</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <img src="data:image/jpeg;base64">
+            </ion-col>
+          </ion-row-->
+          <!--image test-->
+         <ion-card class="ion-text-center imgcrd" >
+            <ion-card-header>
+                <!--ion-card-title>Choose Images to Upload</ion-card-title-->
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" fill="outline"  class="upload">
+                  <span>Upload Cattle Image</span>
+                <input id="uploadBtn" type="file"  class="upload"  (change)="uploadFile($event.target.files)" />
+              </ion-button>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="ion-text-center imghidden" *ngIf="isUploading && !isUploaded">
+            <ion-card-header>
+              <ion-card-title>Selected File:<b>{{ fileName }}</b></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div *ngIf="percentage | async as pct">
+                  Progress: {{ pct | number }}%
+                <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar>
+              </div>
+              <div *ngIf="snapshot | async as snap">
+                  File Size: {{ snap.totalBytes | fileSizePipe }} Transfered:
+                  {{ snap.bytesTransferred | fileSizePipe }}
+                  <div *ngIf="snapshot && snap.bytesTransferred != snap.totalBytes">
+                    <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Pause</ion-button>
+                    <ion-button size="small" (click)="task.resume()" class="button is-info">Resume</ion-button>
+                    <ion-button color="danger" size="small" (click)="task.cancel()" class="button is-danger">Cancel</ion-button>
+                  </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+          <!--ion-card class="ion-text-center imgcrd" *ngIf="!isUploading && isUploaded">
+            <ion-card-header>
+              <ion-card-title>
+                <b>{{ fileName }}</b> Uploaded!
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div *ngIf="UploadedFileURL | async as url">
+                  <img [src]="url" />
+                  <!--a [href]="url" target="_blank" rel="noopener">Download</a->
+              </div>
+                File Size: {{ fileSize | fileSizePipe }}
+                <!--ion-button expand="full" color="success" (click)="isUploading = isUploaded = false">Upload More</ion-button>
+            </ion-card-content>
+          </ion-card-->
+        </ion-item>
+    </div>
+    <ion-button class="save" expand="block" shape="round" (click)="addCattle()">SAVE</ion-button>
+  </div>
+  
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Notifications</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/farm"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list class="content">
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding id="item100" *ngFor="let vaccine of (vaccines | async)">
+      <div *ngIf="vaccine.nextVaccineDate == today">
+        <ion-item>
+         
+          <ion-label>
+            <h2>Vaccination  Notifications</h2>
+            <p>A new message</p>
+          
+            <p>{{vaccine.cattleid}}  Cattle Vaccine day</p>
+          </ion-label>
+          <!--ion-note slot="end">
+            10:45 AM
+          </ion-note-->
+        </ion-item>
+    
+        <!--ion-item-options side="start">
+          <ion-item-option>
+            <ion-icon slot="icon-only" name="heart"></ion-icon>
+          </ion-item-option>
+        </ion-item-options-->
+    
+        <!--ion-item-options side="end">
+          <ion-item-option color="danger">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+          <ion-item-option>
+            <ion-icon slot="icon-only" name="star"></ion-icon>
+          </ion-item-option>
+        </ion-item-options-->
+      </div>     
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

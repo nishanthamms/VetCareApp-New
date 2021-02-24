@@ -1,0 +1,108 @@
+.tool-one{
+  height: 200px;
+}
+
+.my-cam{
+//color: gray;
+font-size: 40px;
+margin-top: 80px;
+margin-left: 20px;
+}
+.user-pic{
+color: black;
+font-size: 68px;
+margin-right: 220px;
+}
+.upload{
+border-radius: 100px;
+//width: 100px;
+padding: auto;
+margin-left:20px;
+margin-top: 25px;
+}
+input#uploadBtn{
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0;
+}
+/*.add-propic{
+--display: inline;
+}
+.my-custom-class {
+--background: #e5e5e5;
+}*/
+
+img{
+border-radius: 150px;
+width: 98px;
+height: 98px;
+margin-left:30px;
+margin-top: 15px;
+}
+
+.name{
+font-size: 22px;
+margin-top: 30px;
+}
+.fullName{
+font-size: 18px;
+margin-top: 20px;
+}
+.designation{
+font-size: 18px;
+//margin-top: 20px;
+}
+
+/*.flex-right {
+  justify-content: flex-end;
+}
+
+.theme{
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.location{
+margin-left: 20px;
+font-size: x-large;
+}
+
+.about{
+margin-left: 20px;
+font-size: x-large;
+}*/
+
+.exit{
+margin-left: 20px;
+font-size: x-large;
+color: #eb445a;
+}
+
+.my-button{
+//color: black;
+//font-size: large;
+margin-left: 20px;
+}
+
+.note{
+margin-right: 25px;
+font-size: x-large;
+}
+.key{
+margin-right: 25px;
+font-size: x-large;
+}
+.edit{
+margin-right: 25px;
+font-size: x-large;
+}
+.imghidden{
+  display:none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imgBtn{
+  margin-left: 7%;
+}
+

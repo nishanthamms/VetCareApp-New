@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar class="tool-one">
+    <ion-title>VetCare App</ion-title>
+    <ion-buttons class="help" slot="end">
+      <ion-icon name="help-circle-outline" routerLink="/tabs/help" class="help-icon"></ion-icon>
+    </ion-buttons>  
+    <ion-buttons class="setting" slot="end">
+      <ion-icon name="settings-sharp" routerLink="/tabs/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="tool-two">
+    <ion-title>Farm Information</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon class="back" name="arrow-back-outline" routerLink="/tabs/farmhouse"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+      <ion-grid class="info">
+        <ion-row>
+          <ion-col size="7">
+            <div>Farm Name : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.farmName}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Farm Reg.No : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.farmRegNo}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Ower Name : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.ownerName}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Veterinarian Division : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.veterinarianDivision}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>G.S Division : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.GSDivision}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Address : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.address}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Contact Number : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.contactNo}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Cattle Count : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.cattleCount}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="7">
+            <div>Dairy Cattle Count : </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{farm.dairyCattleCount}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button class="update" expand="block" [routerLink]="'/tabs/update-farm/'+farm.id">UPDATE</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="delete" expand="block" color="danger" (click)="deleteFarm()">DELETE</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!--ion-item-divider></ion-item-divider-->
+  <ion-toolbar class="tool-two">
+    <ion-title>Cattle Information</ion-title>
+    <ion-buttons class="add" slot="end" routerLink="/tabs/add-cattle">
+      <ion-icon name="add-circle-sharp"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- Default Searchbar -->
+  <ion-searchbar  [(ngModel)]="term" animated="true"></ion-searchbar>
+
+  <ion-list>
+    <ion-grid id="cattle" *ngFor="let cattle of (cattles | async | filter:term)" (click)="gotomore(cattle.cattleTagId)">
+      <div *ngIf="fid== cattle.farmid">
+        <ion-row class="content" [routerLink]="'/tabs/view-cattle/' + cattle.id">
+          <ion-col size="6" >
+            <div>{{ cattle.cattleTagId}}</div>
+          </ion-col>
+          <ion-col size="6">
+            <div>{{ cattle.sex}}</div>
+          </ion-col>
+        </ion-row>
+      </div>   
+    </ion-grid> 
+  </ion-list>
+  
+</ion-content>
