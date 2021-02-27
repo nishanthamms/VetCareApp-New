@@ -25,19 +25,19 @@
   <ion-searchbar  [(ngModel)]="term" animated="true"></ion-searchbar>
   <ion-list>
     <!--ion-item *ngFor="let farm of (farms | async)"-->
-      <ion-grid id="farmers" *ngFor="let farm of (farms | async | filter:term)" >
-        <div *ngIf="userGSdevision== farm.GSDivision">
-        <ion-row class="content" [routerLink]="'/tabs/view-farm/'+farm.id" (click)="gotomore(farm.id)">       
-          <ion-col size="6" >
-            <div>{{ farm.farmName }}</div>
-          </ion-col>
-          <ion-col size="6">
-            <div>{{ farm.farmRegNo }}</div>
-          </ion-col>
-         
-        </ion-row>
+      <div id="farmers" *ngFor="let farm of (farms | async | filter:term)" >
+        <div *ngIf="userGSdevision== farm.GSDivision">       
+           <ion-row class="content" [routerLink]="'/tabs/view-farm/'+farm.id" (click)="gotomore(farm.id)">       
+              <ion-col size="6" >
+                <div>{{ farm.farmName }}</div>
+              </ion-col>
+              <ion-col size="6">
+                <div>{{ farm.farmRegNo }}</div>
+              </ion-col>      
+            </ion-row>
+            <br>          
       </div>
-      </ion-grid>
+      </div>
     <!--/ion-item--> 
   </ion-list>
 </ion-content>
