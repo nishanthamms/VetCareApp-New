@@ -32,12 +32,14 @@ export class AddVaccinationPage implements OnInit {
      }
 
   ngOnInit() {
+    
   } 
 
   updateMyDate($event) {
     // console.log($event); // --> wil contains $event.day.value, $event.month.value and $event.year.value
      this.vaccine.date =  this.vaccine.date.split('T')[0]; 
      this.vaccine.nextVaccineDate =  this.vaccine.nextVaccineDate.split('T')[0];   
+     //console.log("Hello "+this.vaccine.nextVaccineDate);
    }
   addVaccine(){
     this.vaccinationService.addVaccine(this.vaccine).then(() => {
@@ -48,14 +50,18 @@ export class AddVaccinationPage implements OnInit {
       this.vaccine.nextVaccineDate= '';
       this.vaccine.reasonOfNextVaccine= '';
       this.vaccine.remarks= '';
-
-      this.sheduleNotification(this.vaccine.nextVaccineDate,this.vaccine.cattleid);
+     
     }, err => {
     });
+    var arr = this.vaccine.nextVaccineDate.split("-");
+
+    let newDate = new Date(Number(arr[0]),(Number(arr[1])-1),Number(arr[2]),0,1,1);
+    //console.log("next date "+ newDate);
+   this.sheduleNotification(newDate,this.vaccine.cattleid);
   }
   
-  async sheduleNotification(vacinedate,cattleid){
-
+  async sheduleNotification(date,cattleid){
+  //  let newDate = new Date(date);
     await LocalNotifications.schedule({ 
       notifications: [
         {
@@ -70,7 +76,7 @@ export class AddVaccinationPage implements OnInit {
           /*attachments:[
             {id:'face',url:'res://public/assets/vaccination_icon.png'}
           ],*/
-          schedule: {at:new Date(vacinedate)},
+          schedule: {at:date},
         }
       ]
     });

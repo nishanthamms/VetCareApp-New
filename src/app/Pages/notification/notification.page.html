@@ -18,22 +18,27 @@
 
 <ion-content>
   <br>
+ 
   <ion-list class="content">
     <!-- Multi-line sliding item with icon options on both sides -->
-    <ion-item-sliding id="item100" *ngFor="let vaccine of (vaccines | async)">
-      <div *ngIf="vaccine.nextVaccineDate == today">
-        <ion-item>
-         
-          <ion-label>
-            <h2>Vaccination  Notifications</h2>
-            <p>A new message</p>
-          
-            <p>{{vaccine.cattleid}}  Cattle Vaccine day</p>
-          </ion-label>
-          <!--ion-note slot="end">
-            10:45 AM
-          </ion-note-->
-        </ion-item>
+
+    <!--div *ngFor="let cattle of (cattles)"-->
+      <ion-item-sliding id="item100" *ngFor="let vaccine of (vaccines | async)">
+        <div *ngIf="vaccine.nextVaccineDate == today">
+          <ion-item>
+           
+            <ion-label>
+              <h2>Vaccination  Notifications</h2>
+              <p>A new message</p>
+            
+              <p>{{vaccine.cattleid}}  Cattle Vaccine day</p>
+            </ion-label>
+            <!--ion-note slot="end">
+              10:45 AM
+            </ion-note-->
+          </ion-item>
+    <!--/div-->
+  
     
         <!--ion-item-options side="start">
           <ion-item-option>
@@ -52,4 +57,6 @@
       </div>     
     </ion-item-sliding>
   </ion-list>
+
+ 
 </ion-content>

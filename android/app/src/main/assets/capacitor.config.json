@@ -9,7 +9,8 @@
       "launchShowDuration": 0
     },
     "LocalNotifications":{
-      "smallIcon":"cattle_icon.9"
+      "smallIcon":"cattle_icon.9",
+      "iconColor":"#00e64d"
     }
   },
   "cordova": {

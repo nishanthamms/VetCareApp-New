@@ -30,6 +30,7 @@
       </ion-item>
       <ion-item>
         <ion-datetime #myPicker2 type="date" placeholder="Next vaccination date"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="vaccine.nextVaccineDate" (ionChange)="updateMyDate(myPicker2.value)"></ion-datetime>
+                <!--ion-datetime #myPicker2 type="date" placeholder="Next vaccination date"  max="2050-12-31" dispalyFormat="DD-MM-YYYY" [(ngModel)]="vaccine.nextVaccineDate"></ion-datetime-->
       </ion-item>
       <ion-item>
         <ion-input type="text" placeholder="Reason of vaccination" [(ngModel)]="vaccine.reasonOfNextVaccine"></ion-input>
