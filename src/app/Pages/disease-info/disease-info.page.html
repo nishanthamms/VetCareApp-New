@@ -17,77 +17,80 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let disease of (diseases | async)">
-    <div  *ngIf="ctid== disease.cattleid">
-      <ion-card-header></ion-card-header>
-        <ion-card-content>
+  <div *ngFor="let disease of (diseases | async)">
+    <ion-card *ngIf="ctid== disease.cattleid">
+      <div>
+        <ion-card-header></ion-card-header>
+         <ion-card-content>
           <ion-grid class="info">
-        <!--ion-row>
-          <ion-col size="7">
-            <div>Disease Info. ID : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>001</div>
-          </ion-col>
-        </ion-row-->
-        <ion-row>
-          <ion-col size="7">
-            <div>Date : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.date }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Clinical signs : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.clinicalSigns }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Type of clinical signs : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.typeOfClinicalSigns }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Diagnosis : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.diagnosis }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Treatments : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.treatment }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Remarks : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{ disease.remarks }}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row [hidden]=isVetHidden>
-          <ion-col size="6">
-            <ion-button class="update" expand="block" [routerLink]="'/tabs/update-disease/'+disease.id">UPDATE</ion-button>
-          </ion-col>
-          <ion-col size="6">
-            <ion-button class="delete" expand="block" color="danger" (click)="deleteDisease(disease.id)">DELETE</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      </ion-card-content>
-    </div>
-  </ion-card>
+            <!--ion-row>
+              <ion-col size="7">
+                <div>Disease Info. ID : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>001</div>
+              </ion-col>
+            </ion-row-->
+            <ion-row>
+              <ion-col size="7">
+                <div>Date : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.date }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="7">
+                <div>Clinical signs : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.clinicalSigns }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="7">
+                <div>Type of clinical signs : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.typeOfClinicalSigns }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="7">
+                <div>Diagnosis : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.diagnosis }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="7">
+                <div>Treatments : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.treatment }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="7">
+                <div>Remarks : </div>
+              </ion-col>
+              <ion-col size="5">
+                <div>{{ disease.remarks }}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row [hidden]=isVetHidden>
+              <ion-col size="6">
+                <ion-button class="update" expand="block" [routerLink]="'/tabs/update-disease/'+disease.id">UPDATE</ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button class="delete" expand="block" color="danger" (click)="deleteDisease(disease.id)">DELETE</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </div>
+</ion-card>
+</div>
+
 </ion-content>

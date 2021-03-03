@@ -21,6 +21,7 @@ import{NavController} from '@ionic/angular';
 })
 export class AddCattlePage implements OnInit {
 
+  
   // Upload Task
   task: AngularFireUploadTask;
 
@@ -87,7 +88,7 @@ export class AddCattlePage implements OnInit {
         this.farm = farm;
       });
     });*/
-
+   
   }
   
   updateMyDate($event) {

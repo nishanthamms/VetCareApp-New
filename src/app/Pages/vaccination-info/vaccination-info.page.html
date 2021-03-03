@@ -17,77 +17,71 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let vaccine of (vaccines | async)">
-    <div  *ngIf="ctid== vaccine.cattleid">
-    <ion-card-header></ion-card-header>
-    <ion-card-content>
-      <ion-grid class="info"> 
-        <!--ion-row>
-          <ion-col size="7">
-            <div>Vaccination Info. ID : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>001</div>
-          </ion-col>
-        </ion-row-->
-        <ion-row>
-          <ion-col size="7">
-            <div>Date : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.date}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Name of vaccine : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.nameOfVaccine}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Purpose of Vaccine : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.purposeOfVaccine}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Next vacciantion date: </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.nextVaccineDate}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7">
-            <div>Reason of Next Vaccination : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.reasonOfNextVaccine}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="7"> 
-            <div>Remarks : </div>
-          </ion-col>
-          <ion-col size="5">
-            <div>{{vaccine.remarks}}</div>
-          </ion-col>
-        </ion-row>
-        <ion-row [hidden]=isVetHidden>
-          <ion-col size="6">
-            <ion-button class="update" expand="block" [routerLink]="'/tabs/update-vaccine/'+vaccine.id">UPDATE</ion-button>
-          </ion-col>
-          <ion-col size="6">
-            <ion-button class="delete" expand="block" color="danger" (click)="deleteVaccine(vaccine.id)">DELETE</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
+  <div *ngFor="let vaccine of (vaccines | async)">
+    <ion-card *ngIf="ctid== vaccine.cattleid">
+      <div>
+        <ion-card-header></ion-card-header>
+          <ion-card-content>
+            <div class="info"> 
+              <ion-row>
+                <ion-col size="7">
+                  <div>Date : </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.date}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7">
+                  <div>Name of vaccine : </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.nameOfVaccine}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7">
+                  <div>Purpose of Vaccine : </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.purposeOfVaccine}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7">
+                  <div>Next vacciantion date: </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.nextVaccineDate}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7">
+                  <div>Reason of Next Vaccination : </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.reasonOfNextVaccine}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7"> 
+                  <div>Remarks : </div>
+                </ion-col>
+                <ion-col size="5">
+                  <div>{{vaccine.remarks}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row [hidden]=isVetHidden>
+                <ion-col size="6">
+                  <ion-button class="update" expand="block" [routerLink]="'/tabs/update-vaccine/'+vaccine.id">UPDATE</ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button class="delete" expand="block" color="danger" (click)="deleteVaccine(vaccine.id)">DELETE</ion-button>
+                </ion-col>
+              </ion-row>
+           </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
     </div>
-  </ion-card>
 </ion-content>

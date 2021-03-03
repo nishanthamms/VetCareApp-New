@@ -39,6 +39,11 @@ export class VaccinationInfoPage implements OnInit {
 
   ngOnInit() {
     this.vaccines = this.vaccinationService.getVaccines();
+    /*this.vaccines.subscribe(data=>{
+     // data.sort((a, b) => (a.date > b.date) ? 1 : -1);
+
+    });*/
+
     if (this.designation === 'Instructor'){
       this.isVetHidden = true;
      }else{

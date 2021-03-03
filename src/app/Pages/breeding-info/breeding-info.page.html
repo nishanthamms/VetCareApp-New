@@ -17,8 +17,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let breeding of (breedings | async)">
-    <div  *ngIf="ctid== breeding.cattleid">
+  <div *ngFor="let breeding of (breedings | async)">
+  <ion-card *ngIf="ctid== breeding.cattleid">
+    <div>
       <ion-card-header></ion-card-header>
         <ion-card-content>
          <ion-grid class="info">
@@ -106,4 +107,5 @@
      </ion-card-content>
     </div>
   </ion-card>
+</div>
 </ion-content>
