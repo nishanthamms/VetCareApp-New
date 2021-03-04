@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, AlertController, IonRouterOutlet } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
 import { ThemeService } from './services/theme.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { ThemeService } from './services/theme.service';
 })
 export class AppComponent {
 
+  @ViewChild(IonRouterOutlet, {static : true}) routerOutlet: IonRouterOutlet;
   darkMode: any;
 
   constructor(
@@ -20,10 +22,14 @@ export class AppComponent {
     private storage: Storage,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private alertController: AlertController,
+    private location: Location
+
   ) 
   {
     this.initializeApp();
+    this.backButtonEvent();
   }
 
   /*toggleDarkMode(){
@@ -43,6 +49,34 @@ export class AppComponent {
       }
     });
   }
+
+  backButtonEvent(){
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      if(!this.routerOutlet.canGoBack()){
+      this.backButtonAlert();
+      } else {
+        this.location.back();
+      }
+    });
+  }
+
+  async backButtonAlert(){
+    const alert = await this.alertController.create({
+      message: 'Leave the page!',
+      buttons: [{
+        text: 'cancel',
+        role: 'cancel'
+      }, {
+        text: 'Close App',
+        handler: () => {
+          navigator['app'].exitApp();
+        }
+      }]
+    });
+    await alert.present();
+  }
+
+}
 
   
   /*name = 'Angular 6';
@@ -89,4 +123,4 @@ export class AppComponent {
          return 'tab3';
      }
   }*/
-}
+
