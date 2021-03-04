@@ -23,14 +23,18 @@
       Scan Code
     </ion-button>
     <br>
-    <ion-card *ngIf="scannedData">
-      <ion-card-content>
-        <p>
-          Scanned Code Text : <b>{{ scannedData["text"] }}</b>
-        </p>
-        
-      </ion-card-content>
-    </ion-card>
+    <div *ngIf="scannedData">
+      <ion-card>
+        <ion-card-content>
+          <p>
+            Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+          </p>      
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button expand="block" (click)="viewCatlle()">View Cattle</ion-button>
+    </div>
+   
     <br>
 
     <!--ion-item>

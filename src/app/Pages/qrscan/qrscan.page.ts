@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-qrscan',
   templateUrl: './qrscan.page.html',
@@ -12,7 +12,7 @@ export class QrscanPage implements OnInit {
   scannedData: {};
   barcodeScannerOptions: BarcodeScannerOptions;
 
-  constructor(private barcodeScanner: BarcodeScanner) {
+  constructor(private barcodeScanner: BarcodeScanner, private router: Router) {
     this.encodeData = "";
     //Options
     this.barcodeScannerOptions = {
@@ -27,12 +27,19 @@ export class QrscanPage implements OnInit {
       .then(barcodeData => {
        // alert("Barcode data " + JSON.stringify(barcodeData));
         this.scannedData = barcodeData;
+        //return this.scannedData;
       })
       .catch(err => {
         console.log("Error", err);
       });
   }
 
+  viewCatlle(){
+   
+    var arr = this.scannedData["text"];
+    var arr1= arr.toString().split("=");   
+    this.router.navigateByUrl('/tabs/view-cattle/' + arr1[1].toString());
+  }
   encodedText() {
     this.barcodeScanner
       .encode(this.barcodeScanner.Encode.TEXT_TYPE, this.encodeData)
@@ -48,6 +55,9 @@ export class QrscanPage implements OnInit {
   }
 
   ngOnInit() {
+   //var arr = "id = 12234";
+  // var arr1= arr.toString().split("="); 
+   //console.log(arr1[1]);  
   }
 
 }
