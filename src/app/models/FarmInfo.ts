@@ -3,3 +3,11 @@ export interface FarmInfo{
   address: string;
   cattleTag: string;
   }
+
+ /* class FarmInfo{
+
+    public  address: string;
+    public cattleTag: string;
+
+
+  }*/

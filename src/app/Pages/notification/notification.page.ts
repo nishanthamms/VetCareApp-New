@@ -6,7 +6,7 @@ import { Cattle } from 'src/app/models/Cattle';
 import { CattleService } from 'src/app/services/cattle.service';
 import { FarmService } from '../../services/farm.service';
 import { Farm } from '../../models/Farm';
-import { FarmInfo } from '../../models/FarmInfo';
+//import { FarmInfo } from '../../models/FarmInfo';
 import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import {formatDate} from '@angular/common';
@@ -17,20 +17,14 @@ import { NotificationService } from '../../services/notification.service';
   templateUrl: './notification.page.html',
   styleUrls: ['./notification.page.scss'],
 })
+
 export class NotificationPage implements OnInit {
 
   public vaccines: Observable<Vaccination[]>;
   public cattles: Observable<Cattle[]>;
   public farms: Observable<Farm[]>;
-  public allfarms: Observable<FarmInfo[]>;
- // public allfarms:any[] = [];
 
- /* allfrm: FarmInfo={
-    address: '',
-    cattleTag: ''
-  }*/
-
-  students: FarmInfo[] = [];
+  public allfarms = [];
 
   now = new Date();
   today;
@@ -51,38 +45,36 @@ export class NotificationPage implements OnInit {
     console.log(this.today);
 
 
-    /*const studentsObservable = this.notificationService.getStudents();
-        studentsObservable.subscribe((studentsData: FarmInfo[]) => {
-            this.students = studentsData;
-        });*/
-  /*this.farms.forEach( (farmObj) => {
-    this.cattles.forEach( (ctlObj) => {
-      this.vaccines.forEach( (vacObj) => {
+      this.farms.forEach( (farmObj) => {
+        this.cattles.forEach( (ctlObj) => {
+          this.vaccines.forEach( (vacObj) => {
 
-        for (var i in ctlObj) {
-          for (var j in vacObj) {
-            for(var k in farmObj){
-              if(vacObj[j].nextVaccineDate === this.today){   
-                if(vacObj[j].cattleid===ctlObj[i].cattleTagId){
-                  if(ctlObj[i].farmid===farmObj[k].farmRegNo){
-                                   
-                     // console.log(farmObj[k].address); 
-           
-                      this.allfrm.address = farmObj[k].address;
-                      this.allfrm.cattleTag = ctlObj[i].cattleTagId;
-                     
-                      console.log( this.allfrm.cattleTag); 
-                  } 
-                }
-              }    
-            } 
-          }              
-        }
+            for (var i in ctlObj) {
+              for (var j in vacObj) {
+                for(var k in farmObj){
+                  if(vacObj[j].nextVaccineDate === this.today){   
+                    if(vacObj[j].cattleid===ctlObj[i].cattleTagId){
+                      if(ctlObj[i].farmid===farmObj[k].farmRegNo){
+                                      
+                        // console.log(farmObj[k].address); 
+                        
+                        // this.allfrm.address = farmObj[k].address;
+                        // this.allfrm.cattleTag = ctlObj[i].cattleTagId;
+
+                          const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,ctlObj[i].cattleTagId);
+                          this.allfarms.push(frm);
+                    
+                      } 
+                    }
+                  }    
+                } 
+              }              
+            }
+          });
+        });
       });
-    });
-  });*/
+      
   
-
 }
  /* single_notification() {
     // Schedule a single notification
@@ -93,5 +85,18 @@ export class NotificationPage implements OnInit {
       data: { secret: 'key_data' }
     });
   }*/
+
+}
+class FarmInfo{
+
+  public farm: string;
+  public address: string;
+  public cattleTag: string;
+
+ public constructor(farm,address, cattle){
+  this.farm = farm;
+  this.address = address;
+  this.cattleTag = cattle;
+ } 
 
 }
