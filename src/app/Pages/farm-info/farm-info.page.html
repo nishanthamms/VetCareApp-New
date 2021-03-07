@@ -115,7 +115,7 @@
   <!-- Default Searchbar -->
   <ion-searchbar  [(ngModel)]="term" animated="true"></ion-searchbar>
 
-  <ion-list>
+  <!--ion-list>
     <div id="cattle" *ngFor="let cattle of (cattles | async | filter:term)" (click)="gotomore(cattle.cattleTagId)">
       <div *ngIf="fid== cattle.farmid">
         <ion-row class="content" [routerLink]="'/tabs/view-cattle/' + cattle.id">
@@ -129,6 +129,22 @@
         <br>           
       </div>
     </div> 
-  </ion-list>
+  </ion-list-->
   
+  <ion-list>
+   
+    <div *ngFor="let cattle of (cattles | async | filter:term)">
+      <ion-item  *ngIf="fid== cattle.farmid">
+        <ion-thumbnail class="check" slot="start">      
+        </ion-thumbnail>
+      
+        <ion-label>
+          <h2>{{ cattle.cattleTagId}}</h2>
+          <p>{{ cattle.sex}}</p>
+        </ion-label>
+        <ion-button  color="success" fill="outline" slot="end" [routerLink]="'/tabs/view-cattle/' + cattle.id" >View</ion-button>
+      </ion-item>
+   
+    </div>
+  </ion-list>
 </ion-content>

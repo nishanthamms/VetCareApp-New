@@ -23,21 +23,41 @@
 <ion-content>
   <!-- Default Searchbar -->
   <ion-searchbar  [(ngModel)]="term" animated="true"></ion-searchbar>
-  <ion-list>
-    <!--ion-item *ngFor="let farm of (farms | async)"-->
+  <!--ion-list>
+   
       <div id="farmers" *ngFor="let farm of (farms | async | filter:term)" >
         <div *ngIf="userGSdevision== farm.GSDivision">       
-           <ion-row class="content" [routerLink]="'/tabs/view-farm/'+farm.id" (click)="gotomore(farm.id)">       
-              <ion-col size="6" >
+           <ion-row class="content" [routerLink]="'/tabs/view-farm/'+farm.id" (click)="gotomore(farm.id)">     
+            <ion-col size="2">
+            
+             
+            </ion-col>             
+              <ion-col size="4" >
                 <div>{{ farm.farmName }}</div>
               </ion-col>
-              <ion-col size="6">
+              <ion-col size="4">
                 <div>{{ farm.farmRegNo }}</div>
               </ion-col>      
             </ion-row>
             <br>          
       </div>
       </div>
-    <!--/ion-item--> 
+    
+  </ion-list-->
+  <ion-list>
+   
+    <div *ngFor="let farm of (farms | async | filter:term)">
+      <ion-item  *ngIf="userGSdevision== farm.GSDivision">
+      <ion-thumbnail class="check" slot="start">      
+      </ion-thumbnail>
+     
+      <ion-label>
+        <h2>{{ farm.farmName }}</h2>
+        <p>{{ farm.farmRegNo }}</p>
+      </ion-label>
+      <ion-button  color="success" fill="outline" slot="end" [routerLink]="'/tabs/view-farm/'+farm.id" (click)="gotomore(farm.id)">View</ion-button>
+    </ion-item>
+   
+  </div>
   </ion-list>
 </ion-content>

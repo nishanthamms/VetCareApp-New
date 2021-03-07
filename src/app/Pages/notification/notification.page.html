@@ -18,47 +18,44 @@
 
 <ion-content>
   <br>
- 
-  <ion-list class="content">
-    <!-- Multi-line sliding item with icon options on both sides -->
+ <div *ngFor="let frm of (allfarms)">
+   <div *ngIf="userGSdevision==frm.gsdevision">
+    <ion-card class="content"  [routerLink]="'/tabs/view-cattle/' + frm.cattleTag">
+          
+        <ion-card-title>Vaccination  Notifications</ion-card-title>
 
-    <!--div *ngFor="let cattle of (cattles)"-->
-      <ion-item-sliding id="item100" *ngFor="let frm of (allfarms)">
-        <div >
-          <ion-item>
-           
-            <ion-label>
-              <h2>Vaccination  Notifications</h2>
-              <p>A new message</p>
-            
-              <p>{{frm.cattleTag}} Cattle in {{frm.farm}} Cattle Vaccine day</p>
-            </ion-label>
-            <!--ion-note slot="end">
-              10:45 AM
-            </ion-note-->
-          </ion-item>
-
-         
-    <!--/div-->
+        <ion-card-content>
+          <small>Today is vaccination day of {{frm.cattleTag}} Cattle in the {{frm.farm}}.</small><br>
+          <small>Address: {{frm.address}}.</small>
+        </ion-card-content>
+    
+      
+     
   
-    
-        <!--ion-item-options side="start">
-          <ion-item-option>
-            <ion-icon slot="icon-only" name="heart"></ion-icon>
-          </ion-item-option>
-        </ion-item-options-->
-    
-        <!--ion-item-options side="end">
-          <ion-item-option color="danger">
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
-          </ion-item-option>
-          <ion-item-option>
-            <ion-icon slot="icon-only" name="star"></ion-icon>
-          </ion-item-option>
-        </ion-item-options-->
+    </ion-card>
+   </div>
+ </div>
+  <!--ion-list class="content">
+   
+      <ion-item-sliding id="item100" *ngFor="let frm of (allfarms)">
+        <div *ngIf="userGSdevision==frm.gsdevision">
+          <ion-card [routerLink]="'/tabs/view-cattle/' + frm.cattleTag">
+           
+            <div>
+              <h2><i>Vaccination  Notifications</i></h2>
+          
+              <small>Today is vaccination day of {{frm.cattleTag}} Cattle in the {{frm.farm}}.</small><br>
+              <small>Address: {{frm.address}}.</small>
+            </div>
+            
+           
+        
+          </ion-card>
+
+
       </div>     
     </ion-item-sliding>
-  </ion-list>
+  </ion-list-->
 
  
 </ion-content>

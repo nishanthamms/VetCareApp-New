@@ -54,7 +54,6 @@ export class AddVaccinationPage implements OnInit {
     }, err => {
     });
     var arr = this.vaccine.nextVaccineDate.split("-");
-
     let newDate = new Date(Number(arr[0]),(Number(arr[1])-1),Number(arr[2]),0,1,1);
     //console.log("next date "+ newDate);
    this.sheduleNotification(newDate,this.vaccine.cattleid);

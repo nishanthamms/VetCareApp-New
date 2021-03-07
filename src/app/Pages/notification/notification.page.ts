@@ -25,7 +25,7 @@ export class NotificationPage implements OnInit {
   public farms: Observable<Farm[]>;
 
   public allfarms = [];
-
+  userGSdevision :string;
   now = new Date();
   today;
   designation;
@@ -33,6 +33,7 @@ export class NotificationPage implements OnInit {
               private activatedRoute: ActivatedRoute,private cattleService: CattleService,
               private farmService: FarmService,private notificationService: NotificationService) { 
                 this.designation = localStorage.getItem('designation');
+                this.userGSdevision = sessionStorage.getItem('gsdevision');
               }
 
   ngOnInit() {
@@ -55,13 +56,9 @@ export class NotificationPage implements OnInit {
                   if(vacObj[j].nextVaccineDate === this.today){   
                     if(vacObj[j].cattleid===ctlObj[i].cattleTagId){
                       if(ctlObj[i].farmid===farmObj[k].farmRegNo){
-                                      
-                        // console.log(farmObj[k].address); 
-                        
-                        // this.allfrm.address = farmObj[k].address;
-                        // this.allfrm.cattleTag = ctlObj[i].cattleTagId;
+                                    
 
-                          const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,ctlObj[i].cattleTagId);
+                          const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,farmObj[k].GSDivision,ctlObj[i].cattleTagId);
                           this.allfarms.push(frm);
                     
                       } 
@@ -91,11 +88,13 @@ class FarmInfo{
 
   public farm: string;
   public address: string;
+  public gsdevision: string;
   public cattleTag: string;
 
- public constructor(farm,address, cattle){
+ public constructor(farm,address, gsdevision,cattle){
   this.farm = farm;
   this.address = address;
+  this.gsdevision = gsdevision;
   this.cattleTag = cattle;
  } 
 
