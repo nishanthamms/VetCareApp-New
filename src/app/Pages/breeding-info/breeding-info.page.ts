@@ -30,7 +30,8 @@ export class BreedingInfoPage implements OnInit {
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private breedingService: BreedingService) {
-                this.ctid =  sessionStorage.getItem('cattleTagId');
+              this.ctid =  sessionStorage.getItem('cattleTagId');
+                //this.ctid =  this.activatedRoute.snapshot.paramMap.get('id');
                }
 
   ngOnInit() {

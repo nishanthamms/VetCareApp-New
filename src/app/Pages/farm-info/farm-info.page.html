@@ -142,7 +142,7 @@
           <h2>{{ cattle.cattleTagId}}</h2>
           <p>{{ cattle.sex}}</p>
         </ion-label>
-        <ion-button  color="success" fill="outline" slot="end" [routerLink]="'/tabs/view-cattle/' + cattle.id" >View</ion-button>
+        <ion-button  color="success" fill="outline" slot="end" [routerLink]="'/tabs/view-cattle/' + cattle.id" (click)="gotomore(cattle.cattleTagId)">View</ion-button>
       </ion-item>
    
     </div>

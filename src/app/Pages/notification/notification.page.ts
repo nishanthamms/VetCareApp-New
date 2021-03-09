@@ -51,16 +51,18 @@ export class NotificationPage implements OnInit {
           this.vaccines.forEach( (vacObj) => {
 
             for (var i in ctlObj) {
-              for (var j in vacObj) {
+              for (var j in vacObj) {          
                 for(var k in farmObj){
                   if(vacObj[j].nextVaccineDate === this.today){   
                     if(vacObj[j].cattleid===ctlObj[i].cattleTagId){
                       if(ctlObj[i].farmid===farmObj[k].farmRegNo){
                                     
-
+                      
                           const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,farmObj[k].GSDivision,ctlObj[i].cattleTagId);
                           this.allfarms.push(frm);
-                    
+                         
+                        
+                        
                       } 
                     }
                   }    
@@ -71,7 +73,7 @@ export class NotificationPage implements OnInit {
         });
       });
       
-  
+     
 }
  /* single_notification() {
     // Schedule a single notification

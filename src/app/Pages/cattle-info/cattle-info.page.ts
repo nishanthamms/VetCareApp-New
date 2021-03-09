@@ -48,13 +48,15 @@ export class CattleInfoPage implements OnInit {
               private authService: AuthService,
               private profileService: ProfileService,
               private cattleService: CattleService) {
-              this.ctid =  sessionStorage.getItem('cattleTagId');
+             // this.ctid =  sessionStorage.getItem('cattleTagId');
+             this.ctid =  this.activatedRoute.snapshot.paramMap.get('id');
               this.fid =  sessionStorage.getItem('farmId');
               this.designation = localStorage.getItem('designation');
                }
 
   ngOnInit() {
-    
+   // const id = this.activatedRoute.snapshot.paramMap.get('id');
+   // console.log("Hello"+id);
     // window.location.reload();
     // this.cattle =  this.cattleService.getCattles();
     /*this.profileService.getUserProfile().then(profile$ => {
@@ -116,7 +118,8 @@ export class CattleInfoPage implements OnInit {
 
 
   vaccine(){
-    this.router.navigateByUrl('/tabs/view-vaccine/' + this.ctid);
+    
+    this.router.navigateByUrl('/tabs/view-vaccine/' +  this.ctid);
   }
 
   disease(){

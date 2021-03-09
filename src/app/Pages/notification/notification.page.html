@@ -37,7 +37,7 @@
  </div>
   <!--ion-list class="content">
    
-      <ion-item-sliding id="item100" *ngFor="let frm of (allfarms)">
+      <ion-item-sliding id="item100" *ngFor="let frm of (allfarms  | async)">
         <div *ngIf="userGSdevision==frm.gsdevision">
           <ion-card [routerLink]="'/tabs/view-cattle/' + frm.cattleTag">
            
@@ -57,5 +57,4 @@
     </ion-item-sliding>
   </ion-list-->
 
- 
 </ion-content>

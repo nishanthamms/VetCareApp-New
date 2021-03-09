@@ -33,6 +33,8 @@ export class DiseaseInfoPage implements OnInit {
               private activatedRoute: ActivatedRoute,
               private diseaseService: DiseaseService) {
               this.ctid =  sessionStorage.getItem('cattleTagId');
+              //this.ctid =  this.activatedRoute.snapshot.paramMap.get('id');
+              console.log("arrr"+   this.ctid);
               this.designation = localStorage.getItem('designation');
                }
 
@@ -47,6 +49,7 @@ export class DiseaseInfoPage implements OnInit {
 
   ngAfterViewInit(): void{
     const id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("sdsd"+id);
     if(id){
       this.diseaseService.getDisease(id).subscribe(diseaseData => {
         this.disease = diseaseData;
@@ -83,6 +86,7 @@ export class DiseaseInfoPage implements OnInit {
     await alert.present();
   }
   goback(){ 
+    console.log("bk"+ this.ctid);
     this.router.navigateByUrl('/tabs/view-cattle/' + this.ctid);
    }
 }

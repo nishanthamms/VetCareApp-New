@@ -34,6 +34,7 @@ export class VaccinationInfoPage implements OnInit {
               private router: Router,
               private vaccinationService: VaccinationService) {
               this.ctid =  sessionStorage.getItem('cattleTagId');
+              //this.ctid =  this.activatedRoute.snapshot.paramMap.get('id');
               this.designation = localStorage.getItem('designation');
               }
 
