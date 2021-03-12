@@ -18,7 +18,7 @@
 
 <ion-content>
   <br>
- <div *ngFor="let frm of (allfarms)">
+ <!--div *ngFor="let frm of (allfarms)">
    <div *ngIf="userGSdevision==frm.gsdevision">
     <ion-card class="content"  [routerLink]="'/tabs/view-cattle/' + frm.cattleTag">
           
@@ -34,7 +34,24 @@
   
     </ion-card>
    </div>
- </div>
+ </div-->
+ <ion-list>
+   
+  <div *ngFor="let frm of (allfarms)">
+    <ion-item  *ngIf="userGSdevision==frm.gsdevision">
+    <ion-thumbnail class="check" slot="start">      
+    </ion-thumbnail>
+   
+    <ion-label>
+      <h2>Vaccination Notification</h2>
+      <p>Today is vaccination day of {{frm.cattleTag}} Cattle<br> in the {{frm.farm}}.</p>
+      <small>Address: {{frm.address}}.</small>
+    </ion-label>
+    <ion-button  color="success" fill="outline" slot="end"  [routerLink]="'/tabs/view-cattle/'+frm.cattleTag">View</ion-button>
+  </ion-item>
+ 
+</div>
+</ion-list>
   <!--ion-list class="content">
    
       <ion-item-sliding id="item100" *ngFor="let frm of (allfarms  | async)">
