@@ -24,7 +24,7 @@ import { environment } from 'src/environments/environment';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpModule } from '@angular/http';
 // import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -40,7 +40,7 @@ import { HttpModule } from '@angular/http';
     AngularFirestoreModule,
     Ng2SearchPipeModule,
     NgxQRCodeModule,
- 
+    HttpClientModule
   ],
   providers: [
     StatusBar,

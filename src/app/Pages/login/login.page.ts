@@ -91,11 +91,23 @@ export class LoginPage implements OnInit {
       this.authService.userId = userCredential.user.uid;
       localStorage.setItem('userid', this.authService.userId);
       await this.loginForm.hideLoading();
-      this.router.navigateByUrl('tabs/farm');
+     this.router.navigateByUrl('/tabs/farm', { replaceUrl: true });
     } catch (error) {
       await this.loginForm.hideLoading();
       this.loginForm.handleError(error);
     }
   }
 
+ /*async signinuser(email,password) {
+   // const loading = await this.loadingController.create();
+  //  await loading.present();
+    
+    this.authService.signin(email,password).subscribe(
+      async (res) => {
+       // await loading.dismiss();        
+        this.router.navigateByUrl('/tabs/farms', { replaceUrl: true });
+      },
+     
+    );
+  }*/
 }
