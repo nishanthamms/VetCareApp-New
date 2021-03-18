@@ -29,7 +29,7 @@ export class AppComponent {
   ) 
   {
     this.initializeApp();
-    this.backButtonEvent();
+  //  this.backButtonEvent();
   }
 
   /*toggleDarkMode(){
@@ -48,9 +48,69 @@ export class AppComponent {
         this.themeService.enableDark();
       }
     });
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      console.log('Back press handler!');
+      if (this.location.isCurrentPathEqualTo('/tabs/farm')) {
+
+        // Show Exit Alert!
+        console.log('Show Exit Alert!');
+        this.showExitConfirm();
+        processNextHandler();
+      } else {
+
+        // Navigate to back page
+        console.log('Navigate to back page');
+        this.location.back();
+
+      }
+
+    });
+
+    this.platform.backButton.subscribeWithPriority(5, () => {
+      console.log('Handler called to force close!');
+      this.alertController.getTop().then(r => {
+        if (r) {
+          navigator['app'].exitApp();
+        }
+      }).catch(e => {
+        console.log(e);
+      })
+    });
+
   }
 
-  backButtonEvent(){
+  showExitConfirm() {
+    this.alertController.create({
+      header: 'App termination',
+      message: 'Do you want to close the app?',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Stay',
+        role: 'cancel',
+        handler: () => {
+          console.log('Application exit prevented!');
+        }
+      }, {
+        text: 'Exit',
+        handler: () => {
+          navigator['app'].exitApp();
+        }
+      }]
+    })
+      .then(alert => {
+        alert.present();
+      });
+  }
+
+
+  }
+
+  
+
+
+
+  /*backButtonEvent(){
     this.platform.backButton.subscribeWithPriority(10, () => {
       if(!this.routerOutlet.canGoBack()){
       this.backButtonAlert();
@@ -74,9 +134,9 @@ export class AppComponent {
       }]
     });
     await alert.present();
-  }
+  }*/
 
-}
+//}
 
   
   /*name = 'Angular 6';
