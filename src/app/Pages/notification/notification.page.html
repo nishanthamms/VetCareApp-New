@@ -42,12 +42,13 @@
     <ion-thumbnail class="check" slot="start">      
     </ion-thumbnail>
    
-    <ion-label>
-      <h2>Vaccination Notification</h2>
-      <p>Today is vaccination day of {{frm.cattleTag}} Cattle<br> in the {{frm.farm}}.</p>
-      <small>Address: {{frm.address}}.</small>
-    </ion-label>
-    <ion-button  color="success" fill="outline" slot="end"  [routerLink]="'/tabs/view-cattle/'+frm.cattleTag">View</ion-button>
+    <small>
+      <h6>Vaccination Notification</h6>
+      <p class="notificationColr">Today is vaccination day of {{frm.cattleTag}} Cattle in the {{frm.farm}}.</p>
+      <p class="notificationColr">Address: {{frm.address}}.</p>
+    </small>
+    <br>
+    <!--ion-button  color="success" fill="outline" slot="end"  [routerLink]="'/tabs/view-cattle/'+frm.cattleTag">View</ion-button-->
   </ion-item>
  
 </div>
