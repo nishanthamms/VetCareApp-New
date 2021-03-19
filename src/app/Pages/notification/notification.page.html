@@ -48,7 +48,7 @@
       <p class="notificationColr">Address: {{frm.address}}.</p>
     </small>
     <br>
-    <!--ion-button  color="success" fill="outline" slot="end"  [routerLink]="'/tabs/view-cattle/'+frm.cattleTag">View</ion-button-->
+    <ion-button  color="success" fill="outline" slot="end"  [routerLink]="'/tabs/view-cattle/'+frm.cattleTag" (click)="viewCattle(frm.cattleTag,frm.farmId)">View</ion-button>
   </ion-item>
  
 </div>

@@ -31,9 +31,26 @@
       <ion-item>
         <ion-input type="text" placeholder="Speacial feature" [(ngModel)]="cattle.specialFeature"></ion-input>
       </ion-item>
-      <ion-item>
+      <!--ion-item>
         <ion-input type="text" placeholder="Sex" [(ngModel)]="cattle.sex"></ion-input>
-      </ion-item>
+      </ion-item-->
+      <ion-list>
+        <ion-radio-group  [(ngModel)]="cattle.sex">
+          <ion-list-header>
+            <ion-label>Sex</ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>Male</ion-label>
+            <ion-radio  slot="start" value="Male" checked></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Female</ion-label>
+            <ion-radio slot="start" value="Female"></ion-radio>
+          </ion-item>    
+        </ion-radio-group>
+      </ion-list>
       <ion-item>
         <ion-input type="text" placeholder="No of Lactation" [(ngModel)]="cattle.noLactation"></ion-input>
       </ion-item>
@@ -119,6 +136,7 @@
       </ion-item>
     </div>
     <ion-button class="update" expand="block" shape="round" (click)="updateCattle()">UPDATE</ion-button>
+    <br>
   </div>
 </ion-content>
 

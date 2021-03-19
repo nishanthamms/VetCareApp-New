@@ -58,7 +58,7 @@ export class NotificationPage implements OnInit {
                       if(ctlObj[i].farmid===farmObj[k].farmRegNo){
                                     
                       
-                          const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,farmObj[k].GSDivision,ctlObj[i].cattleTagId);
+                          const frm = new FarmInfo(farmObj[k].farmName,farmObj[k].address,farmObj[k].GSDivision,ctlObj[i].cattleTagId,farmObj[k].farmRegNo);
                           this.allfarms.push(frm);
                          
                         
@@ -74,6 +74,14 @@ export class NotificationPage implements OnInit {
       });
       
      
+}
+
+viewCattle(cttleTag,frmId){
+ 
+ //console.log("Hello cattle"+cttleTag);
+ //console.log("Hello farm"+frmId);
+ sessionStorage.setItem('farmId', frmId);
+ sessionStorage.setItem('cattleTagId', cttleTag);
 }
  /* single_notification() {
     // Schedule a single notification
@@ -92,12 +100,14 @@ class FarmInfo{
   public address: string;
   public gsdevision: string;
   public cattleTag: string;
+  public farmId: string;
 
- public constructor(farm,address, gsdevision,cattle){
+ public constructor(farm,address, gsdevision,cattle,farmId){
   this.farm = farm;
   this.address = address;
   this.gsdevision = gsdevision;
   this.cattleTag = cattle;
+  this.farmId = farmId;
  } 
 
 }

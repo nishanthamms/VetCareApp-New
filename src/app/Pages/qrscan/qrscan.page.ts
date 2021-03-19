@@ -37,8 +37,15 @@ export class QrscanPage implements OnInit {
   viewCatlle(){
    
     var arr = this.scannedData["text"];
-    var arr1= arr.toString().split("=");   
-    this.router.navigateByUrl('/tabs/view-cattle/' + arr1[1].toString());
+    //var arr1= arr.toString().split("=");   
+    //this.router.navigateByUrl('/tabs/view-cattle/' + arr1[1].toString());
+    var arr1= arr.toString().split(",");  
+    var arr2 = arr1[0].toString().split("=");  
+    var arr3 = arr1[2].toString().split("=");  
+    
+    sessionStorage.setItem('farmId', arr3[1].toString());
+    sessionStorage.setItem('cattleTagId', arr2[1].toString());
+    this.router.navigateByUrl('/tabs/view-cattle/' + arr2[1].toString());
   }
   encodedText() {
     this.barcodeScanner
