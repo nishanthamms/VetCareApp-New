@@ -9,26 +9,37 @@ ion-slide{
         width: 200px;
         height: 200px;
     }
-  
+
+    /*.background-container{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        background-image: url("assets/images/bg_cow.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }*/
+    
     .link-button{
         color: blue;
     }
-  }
+}
   
-  .login{
-      --background: #007474;
-      color: whitesmoke;
-      border-radius: 30px;
-      margin-left: 60px;
-      margin-right: 60px;
-      margin-top: 40px;
-      font-size: large;
-      font-weight: bold;
-      text-transform: none;
-  }
+
+.login{
+    --background: #007474;
+    color: whitesmoke;
+    border-radius: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 40px;
+    font-size: large;
+    font-weight: bold;
+    text-transform: none;
+}
   
-  .sign-button{
-      color: #007474;
-      font-size: large;
-      font-weight: bold;
-  }
+.sign-button{
+    color: #007474;
+    font-size: large;
+    font-weight: bold;
+}

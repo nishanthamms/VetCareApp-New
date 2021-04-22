@@ -64,7 +64,11 @@ h1{
     --background: #e5e5e5;
   }*/
   ion-card{
-    --background: #ffffe0;
+    --background: #fafab1;
+    color: black;
+  }
+  .action-card{
+    --background: #fcfc7c;
     color: black;
   }
   ion-card-subtitle{
@@ -80,21 +84,27 @@ h1{
     margin-right: 3px;
   }
   .col-two{
-    background: #EE82EE;
-   // border: 1px solid;
-    margin-right: 3px;
+    background: #87CEEB;
+    margin-top: 3px;
+    margin-left: 80px;
   }
   .col-three{
-    background: #87CEEB;
+    background: #32CD32;
     //border: 1px solid;
+    //margin-left: 80px;
+    margin-right: 3px;
   }
   .col-four{
-    background: #32CD32;
+    background: #77f077;
     margin-right: 3px;
     //border: 1px solid;
   }
   .col-five{
     background: #FFFF00;
+    //border: 1px solid;
+  }
+  .col-six{
+    background: #EE82EE;
     //border: 1px solid;
   }
 
@@ -103,18 +113,6 @@ h1{
     color: black;
     margin-left: 25px;
     margin-top: 8px;
-  }
-  .img-one{
-    width: 35px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 5px;
-  }
-  .img-two{
-    width: 40px;
-    margin-left: 40px;
-    //margin-right: 30px;
-    margin-top: 5px;
   }
 
   h1{
@@ -131,14 +129,29 @@ h1{
     background: black;
   }
 
+  .img-one{
+    width: 45px;
+    margin-left: 53px;
+    margin-top: 5px;
+  }
+  .img-two{
+    width: 45px;
+    margin-left: 56px;
+    margin-top: 5px;
+  }
+  .barn{
+    margin-left: 50px;
+    margin-top: 5px;
+    width: 45px;
+  }
   .location{
-    margin-left: 2px;
-    margin-bottom: 5px;
-    font-size: large;
+    margin-left: 50px;
+    margin-top: 5px;
+    width: 40px;
   }
   .qrscan{
-    margin-left: 2px;
-    margin-bottom: 5px;
-    font-size: large;
+    margin-left: 50px;
+    margin-top: 9px;
+    width: 40px;
   }
 
